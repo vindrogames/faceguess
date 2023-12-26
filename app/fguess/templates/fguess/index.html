@@ -1,0 +1,26 @@
+{% extends "fguess/base.html" %}
+
+{% block content %}
+<h1 class="mt-4">Choose create room or join room</h1>  
+<div>
+    <h2 class="mt-2"> Create Room</h2>   
+
+    <form action="/create_room/" method="post">
+        {% csrf_token %}
+        <label for="your_name">Your name: </label>
+        <input id="user_name" type="text" name="user_name" value="">
+        <input type="submit" value="OK">
+    </form>
+
+    <h2 class="mt-2"> Join Room</h2>
+    <form action="/join_room/" method="post">
+        {% csrf_token %}
+        <label for="your_name">Your name: </label>
+        <input id="user_name" type="text" name="user_name" value="">
+        <label for="your_name">Room ID: </label>
+        <input id="room_id" type="text" name="room_id" value="">
+        <input type="submit" value="OK">
+    </form>
+
+</div>
+{% endblock content %}

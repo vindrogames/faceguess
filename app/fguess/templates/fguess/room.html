@@ -1,0 +1,17 @@
+{% extends "fguess/base.html" %}
+
+{% block content %}
+<h1 class="mt-4">Room</h1>  
+<div>
+    <h2 class="mt-2"> {{ number_room }}</h2>
+
+    
+    <ul> 
+    {% for user in room_users %} 
+        <li>{{ user }}</li> 
+    {% endfor %} 
+    </ul> 
+    
+
+</div>
+{% endblock content %}
