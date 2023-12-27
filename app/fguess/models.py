@@ -14,3 +14,8 @@ class CustomUser(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='users')
     def __str__(self):
         return self.username
+    
+class UploadedFile(models.Model):
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='images')
+    file = models.FileField(upload_to='uploads/')
+    #test 
